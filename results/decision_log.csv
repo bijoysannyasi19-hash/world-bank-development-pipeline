@@ -1,0 +1,6 @@
+decision,options,choice,reason,evidence
+Time window,"2019-2021, 2017-2019",2017-2019,Better coverage,API checks
+Remove aggregates,Keep or remove,Remove,Model needs real countries,217 remaining
+Drop bad indicators,"Keep all, drop >50%",Drop >50%,Too much missing,[]
+Drop bad countries,"Keep all, drop >50%",Drop >50%,Unreliable rows,217 left
+Log transforms,"None, log",Log GDP and POP,Skewed data,EDA shows skew
