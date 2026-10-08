@@ -17,7 +17,7 @@ def run_eda():
     plt.xlabel("Count of Missing Values")
     plt.ylabel("Feature")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "02_missingness.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "02_missingness.png"), dpi=72)
     plt.close()
     
     nc = df.select_dtypes(include=["float64", "int64"]).columns
@@ -34,7 +34,7 @@ def run_eda():
     for j in range(i + 1, len(ax_d)):
         ax_d[j].axis("off")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "03_distributions.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "03_distributions.png"), dpi=72)
     plt.close()
     
     plt.figure(figsize=(12, 10))
@@ -42,7 +42,7 @@ def run_eda():
     sns.heatmap(cm, annot=True, fmt=".2f", cmap="coolwarm", square=True)
     plt.title("Correlation Heatmap")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "04_correlation_heatmap.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "04_correlation_heatmap.png"), dpi=72)
     plt.close()
     
     tgt = "SP.DYN.LE00.IN"
@@ -62,7 +62,7 @@ def run_eda():
             h, l = ax_s[0].get_legend_handles_labels()
             fig_s.legend(h, l, loc="lower center", ncol=4)
             plt.tight_layout(rect=[0, 0.05, 1, 1])
-            plt.savefig(os.path.join(fig, "05_target_relationships.png"), dpi=200)
+            plt.savefig(os.path.join(fig, "05_target_relationships.png"), dpi=72)
             plt.close()
             
         plt.figure(figsize=(10, 6))
@@ -72,7 +72,7 @@ def run_eda():
         plt.ylabel("Life Expectancy")
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.savefig(os.path.join(fig, "06_group_comparisons.png"), dpi=200)
+        plt.savefig(os.path.join(fig, "06_group_comparisons.png"), dpi=72)
         plt.close()
 
 if __name__ == "__main__":

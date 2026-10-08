@@ -67,7 +67,7 @@ def run_model():
     plt.title("Model Comparison (RMSE)")
     plt.ylabel("RMSE (Years)")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "11_model_comparison.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "11_model_comparison.png"), dpi=72)
     plt.close()
     
     pl_opt = Pipeline([("imp", SimpleImputer(strategy="mean")), ("sc", StandardScaler()), ("m", HistGradientBoostingRegressor(random_state=42))])
@@ -85,7 +85,7 @@ def run_model():
     plt.title("Tuning Results (HGB)")
     plt.ylabel("RMSE (Years)")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "12_tuning_results.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "12_tuning_results.png"), dpi=72)
     plt.close()
     
     f_m = gs.best_estimator_

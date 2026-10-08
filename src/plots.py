@@ -15,7 +15,7 @@ def draw_arch():
     ]
     for x, y, t in bs:
         ax.text(x, y, t, ha="center", va="center", bbox=dict(boxstyle="round,pad=0.5", fc="lightblue"))
-    plt.savefig(os.path.join(d, "architecture.png"), dpi=200)
+    plt.savefig(os.path.join(d, "architecture.png"), dpi=72)
     plt.close()
     print("Architecture diagram generated")
 

@@ -53,7 +53,7 @@ def run_evaluate():
     plt.xlabel("Actual")
     plt.ylabel("Predicted")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "13_predicted_vs_actual.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "13_predicted_vs_actual.png"), dpi=72)
     plt.close()
     
     rs = y_te - y_pr
@@ -62,7 +62,7 @@ def run_evaluate():
     plt.title("Residuals Distribution")
     plt.xlabel("Residual (Actual - Predicted)")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "14_residuals.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "14_residuals.png"), dpi=72)
     plt.close()
     
     pi = permutation_importance(f_m, X_te, y_te, n_repeats=10, random_state=42, scoring="neg_root_mean_squared_error")
@@ -75,7 +75,7 @@ def run_evaluate():
     plt.title("Permutation Feature Importance (Test Set)")
     plt.xlabel("Increase in RMSE when feature is shuffled")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "15_feature_importance.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "15_feature_importance.png"), dpi=72)
     plt.close()
     
     df_te["Prediction"] = y_pr
@@ -87,7 +87,7 @@ def run_evaluate():
     plt.xlabel("Cluster")
     plt.ylabel("Absolute Error (Years)")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "16_error_by_cluster.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "16_error_by_cluster.png"), dpi=72)
     plt.close()
     
     w_p = df_te.sort_values(by="Error", ascending=False).head(5)[["name", "Error", tgt, "Prediction"]].to_dict(orient="records")

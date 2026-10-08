@@ -137,7 +137,11 @@ def run_report():
     doc.add_heading("Appendix C: Requirement coverage table", 1)
     doc.add_paragraph("Requirement 1: Section 4-9\nRequirement 2: Full report\nRequirement 3: This docx")
     
-    doc.save(os.path.join(rep, "Capstone_Report.docx"))
+    try:
+        doc.save(os.path.join(rep, "Capstone_Report.docx"))
+    except PermissionError:
+        doc.save(os.path.join(rep, "Capstone_Report_Optimized.docx"))
+        print("Saved as Capstone_Report_Optimized.docx due to file lock.")
     print("Report generated")
 
 if __name__ == "__main__":

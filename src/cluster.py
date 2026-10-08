@@ -52,7 +52,7 @@ def run_cluster():
     for a in ax_k.flatten():
         a.set_xlabel("Number of clusters (k)")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "07_k_selection.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "07_k_selection.png"), dpi=72)
     plt.close()
     
     k_opt = 3
@@ -66,7 +66,7 @@ def run_cluster():
     plt.xlabel("Cluster Size")
     plt.ylabel("Distance")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "08_dendrogram.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "08_dendrogram.png"), dpi=72)
     plt.close()
     
     hc = AgglomerativeClustering(n_clusters=k_opt)
@@ -85,7 +85,7 @@ def run_cluster():
     plt.ylabel("Principal Component 2")
     plt.legend(title="Cluster")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "09_pca_clusters.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "09_pca_clusters.png"), dpi=72)
     plt.close()
     
     cp = df.groupby("cluster")[f_c].mean()
@@ -97,7 +97,7 @@ def run_cluster():
     sns.heatmap(cp_s, cmap="RdBu", center=0, annot=False)
     plt.title("Cluster Profile Heatmap (Scaled)")
     plt.tight_layout()
-    plt.savefig(os.path.join(fig, "10_cluster_profiles.png"), dpi=200)
+    plt.savefig(os.path.join(fig, "10_cluster_profiles.png"), dpi=72)
     plt.close()
     
     df.to_csv(os.path.join(pro, "clustered.csv"), index=False)
